@@ -9,6 +9,13 @@ MODVM_PROFILE_LINE="source \$HOME/.moderne/cli/modvm.sh"
 echo "Installing Moderne Version Manager (modvm)..."
 
 mkdir -p "$(dirname "$MODVM_SOURCE_FILE")"
+
+# Remove existing file to ensure we get the latest version
+if [ -f "$MODVM_SOURCE_FILE" ]; then
+    echo "Removing existing modvm.sh to ensure latest version is downloaded..."
+    rm "$MODVM_SOURCE_FILE"
+fi
+
 curl -fsSL "https://raw.githubusercontent.com/mtthwcmpbll/modvm/refs/heads/main/modvm.sh" -o "$MODVM_SOURCE_FILE"
 if [ $? -ne 0 ]; then
     echo "Error: Failed to download modvm.sh!"
