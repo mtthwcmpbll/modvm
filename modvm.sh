@@ -44,8 +44,8 @@ Moderne Version Manager (modvm)
 Usage:
   modvm install <version>    Install a specific version of Moderne CLI
   modvm use <version>        Switch to a specific version of Moderne CLI
-  modvm list                 List all installed versions
-  modvm list-remote          List available versions from Maven Central
+  modvm list (or ls)         List all installed versions
+  modvm list-remote (or ls-remote)  List available versions from Maven Central
   modvm current              Show currently active version
   modvm uninstall <version>  Remove a specific version
   modvm help                 Show this help message
@@ -54,6 +54,8 @@ Examples:
   modvm install 3.21.1      Install Moderne CLI version 3.21.1
   modvm use 3.21.1          Switch to version 3.21.1
   modvm list                 Show all installed versions
+  modvm ls                   Show all installed versions (alias)
+  modvm ls-remote            Show available remote versions (alias)
   modvm current              Show current version
 
 Note: After installation or switching versions, the 'mod' alias will be updated
@@ -295,10 +297,10 @@ modvm() {
         "use")
             modvm_use "$2"
             ;;
-        "list")
+        "list"|"ls")
             modvm_list
             ;;
-        "list-remote")
+        "list-remote"|"ls-remote")
             modvm_list_remote
             ;;
         "current")
