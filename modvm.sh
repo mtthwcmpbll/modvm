@@ -9,7 +9,7 @@
 # Or add this line to your .bashrc/.zshrc:
 # source ~/.moderne/cli/modvm.sh
 
-MODVM_DIR="${HOME}/.moderne/cli/moderne-cli"
+MODVM_DIR="${HOME}/.moderne/cli/modvm-versions"
 MAVEN_CENTRAL_BASE="https://repo1.maven.org/maven2/io/moderne/moderne-cli"
 
 # Colors for output
