@@ -4,12 +4,12 @@
 # A version manager for Moderne CLI similar to nvm
 # 
 # To use modvm, source this file in your shell:
-# source ~/bin/modvm.sh
+# source ~/.moderne/cli/modvm.sh
 # 
 # Or add this line to your .bashrc/.zshrc:
-# source ~/bin/modvm.sh
+# source ~/.moderne/cli/modvm.sh
 
-MODVM_DIR="${HOME}/bin/moderne-cli"
+MODVM_DIR="${HOME}/.moderne/cli/moderne-cli"
 MAVEN_CENTRAL_BASE="https://repo1.maven.org/maven2/io/moderne/moderne-cli"
 
 # Colors for output

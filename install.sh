@@ -8,9 +8,10 @@ MODVM_PROFILE_LINE="source \$HOME/.moderne/cli/modvm.sh"
 
 echo "Installing Moderne Version Manager (modvm)..."
 
-if [ ! -f "$MODVM_SOURCE_FILE" ]; then
-    echo "Error: $MODVM_SOURCE_FILE not found!"
-    echo "Please ensure modvm.sh is in your ~/.moderne/cli directory"
+mkdir -p "$(dirname "$MODVM_SOURCE_FILE")"
+curl -fsSL "https://raw.githubusercontent.com/mtthwcmpbll/modvm/refs/heads/main/modvm.sh" -o "$MODVM_SOURCE_FILE"
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to download modvm.sh!"
     exit 1
 fi
 

@@ -11,3 +11,83 @@ If you need to install a _specific_ version of the CLI, this script automates th
 
 ## Installation
 
+Take a look at the install script before you run it!
+
+You can install or update `modvm` in one command by running it with your shell:
+
+```bash
+curl -s "https://raw.githubusercontent.com/mtthwcmpbll/modvm/refs/heads/main/install.sh" | bash
+```
+
+## Usage
+
+After installation, you can use the following commands to manage your Moderne CLI versions:
+
+### Install a specific version
+```bash
+modvm install <version>
+```
+Downloads and installs a specific version of the Moderne CLI from Maven Central. The newly installed version will automatically become active.
+
+Example:
+```bash
+modvm install 3.21.1
+```
+
+### Switch to an installed version
+```bash
+modvm use <version>
+```
+Switches to a previously installed version of the Moderne CLI.
+
+Example:
+```bash
+modvm use 3.21.1
+```
+
+### List installed versions
+```bash
+modvm list
+```
+Shows all locally installed versions of the Moderne CLI. The currently active version is marked with an asterisk (*).
+
+### List available remote versions
+```bash
+modvm list-remote
+```
+Fetches and displays all available versions from Maven Central. Shows which versions are installed locally and which one is currently active.
+
+### Show current version
+```bash
+modvm current
+```
+Displays the currently active version of the Moderne CLI.
+
+### Uninstall a version
+```bash
+modvm uninstall <version>
+```
+Removes a specific version from your local installation. If you uninstall the currently active version, the `mod` command will no longer be available until you switch to another version.
+
+Example:
+```bash
+modvm uninstall 3.21.1
+```
+
+### Get help
+```bash
+modvm help
+```
+Shows the help message with all available commands and examples.
+
+### Using the Moderne CLI
+
+Once you have installed and activated a version using `modvm`, the `mod` command will be available in your shell:
+
+```bash
+mod --version
+mod --help
+```
+
+The `mod` alias is automatically updated when you install or switch versions using `modvm`.  Take a look at the official [Moderne documentation](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) to get started interacting with your codebase with the CLI.
+
